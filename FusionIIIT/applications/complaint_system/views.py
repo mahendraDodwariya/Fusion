@@ -485,7 +485,9 @@ def caretaker(request):
         
 
         notification = Notification.objects.filter(recipient=current_user.id)
-        notification = notification.filter(data__exact={'url':'complaint:detail2','module':'Complaint System'})
+
+        # here  I changed the url path from detail2 to detail
+        notification = notification.filter(data__exact={'url':'complaint:detail','module':'Complaint System'})
         return render(request, "complaintModule/complaint_caretaker.html",
                       {'history': history, 
                       'notification': notification})
@@ -515,7 +517,9 @@ def caretaker(request):
                     overduecomplaint.append(i)
         
         notification = Notification.objects.filter(recipient=current_user.id)
-        notification = notification.filter(data__exact={'url':'complaint:detail2','module':'Complaint System'})
+        
+        # here  I changed the url path from detail2 to detail
+        notification = notification.filter(data__exact={'url':'complaint:detail','module':'Complaint System'})
         
 
         
