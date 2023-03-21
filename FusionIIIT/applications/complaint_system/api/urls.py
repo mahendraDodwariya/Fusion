@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from . import views
-
+ 
 urlpatterns = [
 
     url(r'^user/detail/(?P<detailcomp_id1>[0-9]+)/$', views.complaint_details_api,name='complain-detail-get-api'),
@@ -20,9 +20,14 @@ urlpatterns = [
     url(r'^removecaretaker/(?P<c_id>[0-9]+)',views.edit_caretaker_api,name='caretaker-delete-api'),
     url(r'^updatecaretaker/(?P<c_id>[0-9]+)',views.edit_caretaker_api,name='caretaker-put-api'),
     
+    url(r'^secincharges',views.secincharge_api,name='secincharge-get-api'),
+    url(r'^addsecincharge',views.secincharge_api,name='secincharge-post-api'),
+    url(r'^removesecincharge/(?P<c_id>[0-9]+)',views.edit_secincharge_api,name='secincharge-delete-api'),
+    url(r'^updatesecincharge/(?P<c_id>[0-9]+)',views.edit_secincharge_api,name='secincharge-put-api'),
+    
     url(r'^supervisors',views.supervisor_api,name='supervisor-get-api'),
     url(r'^addsupervisor',views.supervisor_api,name='supervisor-post-api'),
     url(r'^removesupervisor/(?P<s_id>[0-9]+)',views.edit_supervisor_api,name='supervisor-delete-api'),
     url(r'^updatesupervisor/(?P<s_id>[0-9]+)',views.edit_supervisor_api,name='supervisor-put-api'),
     
-]
+] 
